@@ -4,7 +4,7 @@
 #
 Name     : Uranium
 Version  : 3.6.0
-Release  : 2
+Release  : 3
 URL      : https://github.com/Ultimaker/Uranium/archive/3.6.0.tar.gz
 Source0  : https://github.com/Ultimaker/Uranium/archive/3.6.0.tar.gz
 Summary  : No detailed summary available
@@ -68,15 +68,16 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1548352086
+export SOURCE_DATE_EPOCH=1556924529
 mkdir -p clr-build
 pushd clr-build
+export LDFLAGS="${LDFLAGS} -fno-lto"
 %cmake ..
 make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1548352086
+export SOURCE_DATE_EPOCH=1556924529
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/Uranium
 cp LICENSE %{buildroot}/usr/share/package-licenses/Uranium/LICENSE
@@ -156,7 +157,7 @@ for src in %{buildroot}/usr/lib64/python*/site-packages; do dest=$(sed 's!/usr/l
 
 %files data
 %defattr(-,root,root,-)
-/usr/share/cmake-3.13/Modules/UraniumTranslationTools.cmake
+/usr/share/cmake-3.14/Modules/UraniumTranslationTools.cmake
 /usr/share/uranium/resources/bundled_packages/uranium.json
 /usr/share/uranium/resources/i18n/de_DE/LC_MESSAGES/uranium.mo
 /usr/share/uranium/resources/i18n/de_DE/uranium.po
