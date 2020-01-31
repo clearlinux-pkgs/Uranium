@@ -1,5 +1,5 @@
 PKG_NAME := Uranium
-URL = https://github.com/Ultimaker/Uranium/archive/4.3.0/Uranium-4.3.0.tar.gz
+URL = https://github.com/Ultimaker/Uranium/archive/4.4.1/Uranium-4.4.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
