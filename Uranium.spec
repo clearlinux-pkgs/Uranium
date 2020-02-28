@@ -4,10 +4,10 @@
 #
 Name     : Uranium
 Version  : 4.5.0
-Release  : 13
+Release  : 14
 URL      : https://github.com/Ultimaker/Uranium/archive/4.5.0/Uranium-4.5.0.tar.gz
 Source0  : https://github.com/Ultimaker/Uranium/archive/4.5.0/Uranium-4.5.0.tar.gz
-Summary  : No detailed summary available
+Summary  : A Python framework for building Desktop applications.
 Group    : Development/Tools
 License  : LGPL-3.0
 Requires: Uranium-data = %{version}-%{release}
@@ -70,9 +70,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1582746543
+export SOURCE_DATE_EPOCH=1582906208
 mkdir -p clr-build
 pushd clr-build
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -83,7 +84,7 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1582746543
+export SOURCE_DATE_EPOCH=1582906208
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/Uranium
 cp %{_builddir}/Uranium-4.5.0/LICENSE %{buildroot}/usr/share/package-licenses/Uranium/b0285d2a104d4e90b17a2db8a713bd441745b793
