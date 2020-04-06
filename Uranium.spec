@@ -4,10 +4,10 @@
 #
 Name     : Uranium
 Version  : 4.5.0
-Release  : 14
+Release  : 15
 URL      : https://github.com/Ultimaker/Uranium/archive/4.5.0/Uranium-4.5.0.tar.gz
 Source0  : https://github.com/Ultimaker/Uranium/archive/4.5.0/Uranium-4.5.0.tar.gz
-Summary  : A Python framework for building Desktop applications.
+Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-3.0
 Requires: Uranium-data = %{version}-%{release}
@@ -70,21 +70,20 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1582906208
+export SOURCE_DATE_EPOCH=1586205541
 mkdir -p clr-build
 pushd clr-build
-# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$CFLAGS -fno-lto "
-export FFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 %cmake ..
 make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1582906208
+export SOURCE_DATE_EPOCH=1586205541
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/Uranium
 cp %{_builddir}/Uranium-4.5.0/LICENSE %{buildroot}/usr/share/package-licenses/Uranium/b0285d2a104d4e90b17a2db8a713bd441745b793
@@ -167,7 +166,7 @@ for src in %{buildroot}/usr/lib64/python*/site-packages; do dest=$(sed 's!/usr/l
 
 %files data
 %defattr(-,root,root,-)
-/usr/share/cmake-3.16/Modules/UraniumTranslationTools.cmake
+/usr/share/cmake-3.17/Modules/UraniumTranslationTools.cmake
 /usr/share/uranium/resources/bundled_packages/uranium.json
 /usr/share/uranium/resources/i18n/de_DE/LC_MESSAGES/uranium.mo
 /usr/share/uranium/resources/i18n/de_DE/uranium.po
