@@ -4,7 +4,7 @@
 #
 Name     : Uranium
 Version  : 4.8
-Release  : 27
+Release  : 28
 URL      : https://github.com/Ultimaker/Uranium/archive/4.8/Uranium-4.8.tar.gz
 Source0  : https://github.com/Ultimaker/Uranium/archive/4.8/Uranium-4.8.tar.gz
 Summary  : No detailed summary available
