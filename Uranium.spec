@@ -4,7 +4,7 @@
 #
 Name     : Uranium
 Version  : 4.9.1
-Release  : 34
+Release  : 35
 URL      : https://github.com/Ultimaker/Uranium/archive/4.9.1/Uranium-4.9.1.tar.gz
 Source0  : https://github.com/Ultimaker/Uranium/archive/4.9.1/Uranium-4.9.1.tar.gz
 Summary  : No detailed summary available
@@ -70,7 +70,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1620749772
+export SOURCE_DATE_EPOCH=1626708187
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -83,7 +83,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1620749772
+export SOURCE_DATE_EPOCH=1626708187
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/Uranium
 cp %{_builddir}/Uranium-4.9.1/LICENSE %{buildroot}/usr/share/package-licenses/Uranium/b0285d2a104d4e90b17a2db8a713bd441745b793
@@ -173,7 +173,7 @@ for src in %{buildroot}/usr/lib64/python*/site-packages; do dest=$(sed 's!/usr/l
 
 %files data
 %defattr(-,root,root,-)
-/usr/share/cmake-3.20/Modules/UraniumTranslationTools.cmake
+/usr/share/cmake-3.21/Modules/UraniumTranslationTools.cmake
 /usr/share/uranium/resources/bundled_packages/uranium.json
 /usr/share/uranium/resources/i18n/cs_CZ/LC_MESSAGES/uranium.mo
 /usr/share/uranium/resources/i18n/cs_CZ/uranium.po
