@@ -4,7 +4,7 @@
 #
 Name     : Uranium
 Version  : 4.11.0
-Release  : 39
+Release  : 40
 URL      : https://github.com/Ultimaker/Uranium/archive/4.11.0/Uranium-4.11.0.tar.gz
 Source0  : https://github.com/Ultimaker/Uranium/archive/4.11.0/Uranium-4.11.0.tar.gz
 Summary  : No detailed summary available
