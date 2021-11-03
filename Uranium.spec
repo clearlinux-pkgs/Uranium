@@ -4,7 +4,7 @@
 #
 Name     : Uranium
 Version  : 4.11.0
-Release  : 40
+Release  : 41
 URL      : https://github.com/Ultimaker/Uranium/archive/4.11.0/Uranium-4.11.0.tar.gz
 Source0  : https://github.com/Ultimaker/Uranium/archive/4.11.0/Uranium-4.11.0.tar.gz
 Summary  : No detailed summary available
@@ -70,7 +70,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1631719742
+export SOURCE_DATE_EPOCH=1635955897
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -83,7 +83,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1631719742
+export SOURCE_DATE_EPOCH=1635955897
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/Uranium
 cp %{_builddir}/Uranium-4.11.0/LICENSE %{buildroot}/usr/share/package-licenses/Uranium/b0285d2a104d4e90b17a2db8a713bd441745b793
